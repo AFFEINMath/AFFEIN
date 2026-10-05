@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Form 1 Mathematics Zambia - lessons, examples, activities, quizzes and CBC-style assessment." name="description"/>
+<meta content="#173b8f" name="theme-color"/>
+<title>AFFEIN | Zambia CBC Mathematics</title>
+<style>
+:root{
+ --navy:#0f172a;--blue:#2563eb;--indigo:#1e3a8a;--cyan:#06b6d4;
+ --bg:#f4f7fb;--card:#fff;--text:#172033;--muted:#64748b;
+ --line:#dbe3ef;--good:#15803d;--warn:#b45309;--danger:#b91c1c;
+ --shadow:0 14px 40px rgba(15,23,42,.09);--radius:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+button,input,select{font:inherit}
+button{cursor:pointer}
+header{
+ min-height:500px;padding:70px 20px;color:#fff;text-align:center;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;
+ background:
+ radial-gradient(circle at 10% 20%,rgba(255,255,255,.13) 0 90px,transparent 91px),
+ radial-gradient(circle at 90% 75%,rgba(6,182,212,.16) 0 140px,transparent 141px),
+ linear-gradient(135deg,#0b1020,#173b8f 55%,#2563eb);
+ position:relative;overflow:hidden;
+}
+.hero-symbols{font-size:28px;letter-spacing:12px;opacity:.35;margin-bottom:18px}
+header h1{font-size:clamp(38px,7vw,72px);letter-spacing:2px;line-height:1.1}
+header p{max-width:780px;font-size:18px;opacity:.92;margin:18px auto 24px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn{
+ border:0;border-radius:12px;padding:12px 18px;font-weight:700;text-decoration:none;
+ display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s
+}
+.btn-primary{background:#fff;color:#173b8f}.btn-primary:hover{transform:translateY(-2px)}
+.btn-dark{background:#0f172a;color:#fff}.btn-blue{background:var(--blue);color:#fff}
+.btn-outline{background:transparent;border:1px solid currentColor;color:inherit}
+nav{
+ position:sticky;top:0;z-index:1000;background:rgba(15,23,42,.96);backdrop-filter:blur(12px);
+ display:flex;align-items:center;justify-content:center;gap:5px;flex-wrap:wrap;padding:10px 12px;
+ box-shadow:0 5px 22px rgba(0,0,0,.16)
+}
+nav a{color:#e5e7eb;text-decoration:none;padding:9px 12px;border-radius:9px;font-weight:700;font-size:14px}
+nav a:hover,nav a.active{background:var(--blue);color:#fff}
+.toolbar{
+ position:sticky;top:58px;z-index:800;background:#fff;border-bottom:1px solid var(--line);
+ padding:10px 4%;display:flex;gap:10px;align-items:center;flex-wrap:wrap
+}
+.search{flex:1;min-width:210px;padding:11px 14px;border:1px solid var(--line);border-radius:12px;outline:none}
+.search:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+main{width:min(1180px,93%);margin:auto;padding:38px 0}
+section{
+ background:var(--card);padding:38px;margin-bottom:28px;border:1px solid var(--line);
+ border-radius:var(--radius);box-shadow:var(--shadow);scroll-margin-top:130px
+}
+.section-label,.activity-label{
+ display:inline-block;padding:5px 11px;border-radius:20px;font-size:11px;font-weight:800;letter-spacing:.4px
+}
+.section-label{background:#dbeafe;color:#1d4ed8}.activity-label{background:var(--blue);color:#fff}
+h2{font-size:clamp(27px,4vw,38px);color:var(--indigo);margin:8px 0 22px;padding-bottom:12px;border-bottom:3px solid var(--blue)}
+h3{color:#1d4ed8;font-size:22px;margin:27px 0 11px}h4{color:#334155;margin-bottom:8px}
+p{margin-bottom:13px}ul,ol{margin:12px 0 14px 28px}li{margin-bottom:7px}
+.hero-grid,.topic-grid,.feature-grid,.stat-grid{display:grid;gap:18px}
+.hero-grid{grid-template-columns:1.3fr .7fr}.topic-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.feature-grid{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}.stat-grid{grid-template-columns:repeat(4,1fr)}
+.topic-card,.feature,.stat,.formula-card{
+ background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 6px 18px rgba(15,23,42,.05)
+}
+.topic-card{display:block;text-decoration:none;color:var(--text);position:relative;overflow:hidden;transition:.2s}
+.topic-card:before{content:"";position:absolute;left:0;top:0;width:100%;height:5px;background:linear-gradient(90deg,var(--blue),var(--cyan))}
+.topic-card:hover{transform:translateY(-5px);box-shadow:0 15px 28px rgba(37,99,235,.14)}
+.topic-icon{font-size:34px}.topic-card h3{margin-top:5px;font-size:20px}.topic-card p{color:var(--muted);font-size:14px}
+.feature strong,.stat strong{display:block;color:var(--indigo);font-size:18px}.stat{text-align:center}.stat strong{font-size:28px}
+.example,.activity,.note,.important,.answer{padding:22px;margin:22px 0;border-radius:15px}
+.example{background:#f8fafc;border-left:5px solid var(--blue)}
+.activity{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #bfdbfe}
+.note{background:#fffbeb;color:#713f12;border-left:5px solid #f59e0b}
+.important{background:#fef2f2;color:#7f1d1d;border-left:5px solid #ef4444}
+.answer{background:#ecfdf5;color:#14532d;border-left:5px solid #22c55e}
+.math{
+ background:#111827;color:#f8fafc;padding:17px 20px;border-radius:12px;margin:15px 0;
+ font:700 17px/1.55 "Courier New",monospace;overflow:auto
+}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:22px 0;overflow:hidden;border-radius:12px;box-shadow:0 5px 15px rgba(15,23,42,.07)}
+th{background:var(--indigo);color:#fff;padding:13px;text-align:left}td{padding:13px;border-bottom:1px solid var(--line);background:#fff}tr:nth-child(even) td{background:#f8fafc}
+.diagram{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px;margin:20px 0;text-align:center;overflow:auto}
+.diagram svg{max-width:100%;height:auto}
+.progress-wrap{background:#e2e8f0;border-radius:99px;height:12px;overflow:hidden}.progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:.3s}
+.topic-controls{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0}.topic-controls button{border:1px solid var(--line);background:#fff;padding:9px 13px;border-radius:10px;font-weight:700}
+.topic-controls button:hover{background:#eff6ff;border-color:#93c5fd}
+.quiz-q{padding:17px;margin:15px 0;background:#f8fafc;border:1px solid var(--line);border-radius:13px}
+.quiz-q label{display:block;margin:7px 0}.quiz-q input[type=radio]{margin-right:8px}
+.hidden{display:none!important}.answer-toggle{border:0;background:#dcfce7;color:#166534;padding:8px 12px;border-radius:9px;font-weight:700}
+footer{background:linear-gradient(135deg,#0f172a,#172554);color:#fff;text-align:center;padding:45px 20px}
+footer p{opacity:.8;margin:5px}.footer-links{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin:15px 0}.footer-links a{color:#bfdbfe}
+.floating{
+ position:fixed;right:20px;bottom:20px;z-index:900;width:50px;height:50px;border:0;border-radius:50%;
+ background:var(--blue);color:#fff;font-size:21px;box-shadow:0 8px 20px rgba(37,99,235,.3)
+}
+.dark{--bg:#0b1220;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;--line:#263449;--shadow:0 14px 40px rgba(0,0,0,.25)}
+.dark .topic-card,.dark .feature,.dark .stat,.dark .formula-card,.dark td,.dark .diagram{background:#111827}
+.dark .example{background:#172033}.dark .toolbar{background:#111827}.dark .topic-controls button{background:#111827;color:#e5e7eb}
+
+/* ---------- Zambia resource centre ---------- */
+.resource-hero{background:linear-gradient(135deg,#eef6ff,#f5f3ff);border:1px solid #dbe7ff;border-radius:18px;padding:24px;margin:20px 0}
+.resource-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:22px 0}
+.resource-card{display:flex;flex-direction:column;justify-content:space-between;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 7px 20px rgba(15,23,42,.06);min-height:220px}
+.resource-card .resource-icon{font-size:32px;margin-bottom:8px}
+.resource-card h3{margin:5px 0 8px}
+.resource-card p{color:var(--muted);font-size:14px}
+.resource-meta{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0 15px}
+.resource-tag{font-size:11px;font-weight:800;padding:5px 8px;border-radius:999px;background:#ede9fe;color:#5b21b6}
+.resource-card .btn{width:100%;margin-top:auto}
+.resource-notice{background:#fff7ed;border-left:5px solid #f59e0b;padding:17px 18px;border-radius:12px;margin:18px 0}
+.resource-filter{display:flex;gap:9px;flex-wrap:wrap;margin:15px 0}
+.resource-filter button{border:1px solid var(--line);background:var(--card);color:var(--text);padding:9px 12px;border-radius:10px;font-weight:700}
+.resource-filter button.active,.resource-filter button:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.dark .resource-hero{background:linear-gradient(135deg,#172033,#211b35);border-color:#334155}
+
+.print-only{display:none}
+@media print{
+ nav,.toolbar,.floating,.hero-actions,.topic-controls,.no-print{display:none!important}
+ header{min-height:250px}.print-only{display:block}section{box-shadow:none;border:1px solid #ccc;break-inside:avoid}
+ body{background:#fff}main{width:100%;padding:0}a{color:inherit}
+}
+@media(max-width:800px){.hero-grid{grid-template-columns:1fr}.stat-grid{grid-template-columns:repeat(2,1fr)}section{padding:25px}}
+@media(max-width:520px){.stat-grid{grid-template-columns:1fr 1fr}nav a{font-size:12px;padding:8px}.toolbar{top:48px}section{padding:20px}.math{font-size:14px}}
+
+/* ---------- Advanced learning features ---------- */
+:root{
+ --accent:#7c3aed;
+ --focus:#f59e0b;
+ --surface-2:#eef4ff;
+}
+.skip-link{
+ position:fixed;left:12px;top:-60px;z-index:5000;background:#fff;color:#111827;
+ padding:10px 14px;border-radius:10px;font-weight:800;box-shadow:0 8px 25px rgba(0,0,0,.2)
+}
+.skip-link:focus{top:12px}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:4px 0 22px}
+.hero-badge{
+ background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);
+ padding:7px 12px;border-radius:999px;font-size:13px;font-weight:700
+}
+.dashboard{
+ display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:25px 0
+}
+.stat-card{
+ background:linear-gradient(135deg,#f8fbff,#eef4ff);border:1px solid #dbe7ff;
+ border-radius:16px;padding:18px;text-align:center
+}
+.stat-card strong{display:block;font-size:25px;color:#1e3a8a}
+.stat-card span{font-size:13px;color:#64748b}
+.tool-row{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.small-btn{
+ border:1px solid var(--line);background:#fff;color:var(--text);padding:9px 12px;
+ border-radius:10px;font-weight:700
+}
+.small-btn:hover{border-color:#93c5fd;background:#eff6ff}
+.cbc-strip{
+ display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:25px 0
+}
+.cbc-card{
+ padding:16px;border-radius:14px;border:1px solid #dbe7ff;background:#f8fbff
+}
+.cbc-card b{display:block;color:#1e3a8a;margin-bottom:4px}
+.competency-tags{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 20px}
+.competency-tags span{
+ background:#ede9fe;color:#5b21b6;padding:5px 9px;border-radius:999px;
+ font-size:12px;font-weight:800
+}
+.lesson-tools{
+ display:flex;gap:8px;flex-wrap:wrap;margin:15px 0 5px
+}
+.topic-complete{
+ display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+ padding:14px 16px;margin:22px 0;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:14px
+}
+.topic-complete button{border:0;background:#15803d;color:#fff;padding:9px 13px;border-radius:9px;font-weight:800}
+.practice-box{
+ background:linear-gradient(135deg,#faf5ff,#eef2ff);border:1px solid #ddd6fe;
+ padding:24px;border-radius:16px;margin:25px 0
+}
+.practice-box input{
+ width:100%;max-width:300px;padding:11px;border:1px solid #cbd5e1;border-radius:9px;margin:8px 0
+}
+.feedback{margin-top:12px;padding:12px;border-radius:10px;font-weight:700}
+.feedback.good{background:#dcfce7;color:#166534}
+.feedback.bad{background:#fee2e2;color:#991b1b}
+.notes-area{
+ width:100%;min-height:130px;padding:14px;border:1px solid var(--line);
+ border-radius:12px;resize:vertical;background:var(--card);color:var(--text)
+}
+.note-status{font-size:13px;color:var(--muted);margin-top:7px}
+.font-controls{display:flex;gap:6px;align-items:center}
+.dark .stat-card,.dark .cbc-card{background:#172033;border-color:#334155}
+.dark .small-btn{background:#172033;color:#e5e7eb;border-color:#334155}
+.dark .practice-box{background:#1b1630;border-color:#4c1d95}
+.dark .notes-area{background:#111827;color:#e5e7eb;border-color:#334155}
+.dark .topic-complete{background:#052e16;border-color:#166534}
+@media(max-width:850px){
+ .dashboard,.cbc-strip{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:520px){
+ .dashboard,.cbc-strip{grid-template-columns:1fr}
+ .hero-badge{font-size:12px}
+}
+@media print{
+ nav,.toolbar,.hero-actions,.floating,.tool-row,.lesson-tools,.topic-complete,
+ .practice-box,#quiz,#cbc-exam .lesson-tools{display:none!important}
+ body{background:#fff;color:#000}
+ section{box-shadow:none;border:1px solid #ccc;break-inside:avoid}
+ header{min-height:auto;padding:35px;color:#000;background:#fff}
+ header p{color:#000}
+}
+</style>
+<meta content="index,follow" name="robots"/></head>
+<body><a class="skip-link" href="#main-content">Skip to main content</a>
+<header id="home">
+<div class="hero-symbols">∑ π √ × ÷ = ∠ ∞</div>
+<h1>FORM 1 MATHEMATICS</h1>
+<p>AFFEIN — clear lessons, worked examples, visual learning, activities, quizzes and examination practice.</p>
+
+<div aria-label="Learning resource features" class="hero-badges">
+<span class="hero-badge">🇿🇲 Zambia CBC aligned</span>
+<span class="hero-badge">📚 Form 1 Mathematics</span>
+<span class="hero-badge">🧠 Learn • Practise • Apply</span>
+<span class="hero-badge">📱 Mobile friendly</span>
+</div>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#topics">Explore Topics</a>
+<a class="btn btn-outline" href="#cbc-exam">Start CBC Assessment</a>
+</div>
+</header>
+<nav id="mainNav">
+<a href="#home">Home</a><a href="#topics">Topics</a>
+<a href="#real-numbers">Real Numbers</a><a href="#sets">Sets</a><a href="#directed-numbers">Directed Numbers</a>
+<a href="#algebra">Algebra</a><a href="#coordinate-geometry">Coordinate Geometry</a>
+<a href="#relations-functions">Relations &amp; Functions</a><a href="#approximations">Approximations</a>
+<a href="#angles-polygons">Angles &amp; Polygons</a><a href="#financial-arithmetic">Financial Arithmetic</a>
+<a href="#directions-bearings">Directions &amp; Bearings</a><a href="#similarity-congruence">Similarity &amp; Congruence</a>
+<a href="#mensuration">Mensuration</a><a href="#resource-centre">Pamphlets &amp; Past Papers</a><a href="#cbc-exam">CBC Exam</a>
+</nav>
+<div class="toolbar no-print">
+<input class="search" id="searchBox" placeholder="Search lessons, formulas, examples..." type="search"/>
+<button class="btn btn-dark" onclick="toggleDark()" type="button">🌙 Theme</button>
+<button class="btn btn-blue" onclick="window.print()" type="button">🖨 Print</button>
+
+<div aria-label="Text size controls" class="font-controls" id="fontControls">
+<span aria-hidden="true">A</span>
+<button aria-label="Decrease text size" class="small-btn" onclick="changeFont(-1)" type="button">A−</button>
+<button aria-label="Increase text size" class="small-btn" onclick="changeFont(1)" type="button">A+</button>
+</div>
+<button class="small-btn" onclick="window.print()" type="button">🖨 Print</button>
+<button class="small-btn" onclick="clearSiteData()" type="button">↺ Reset progress &amp; notes</button>
+</div>
+<main id="main-content">
+<section id="welcome">
+<span class="section-label">WELCOME</span>
+<h2>Learn Mathematics by Understanding It</h2>
+<div class="hero-grid">
+<div>
+<p>This learning hub is organised around the Form 1 topics you have built. Each topic combines explanation, worked examples, practical application, visual support and activities.</p>
+<div class="note"><strong>CBC approach:</strong> Use mathematics to reason, solve problems, communicate ideas and apply knowledge to everyday situations.</div>
+<div class="stat-grid">
+<div class="stat"><strong>12</strong>Topics</div><div class="stat"><strong>100+</strong>Questions</div>
+<div class="stat"><strong>24/7</strong>Offline access</div><div class="stat"><strong>1</strong>Learning hub</div>
+</div>
+</div>
+<div class="feature">
+<strong>My Learning Progress</strong>
+<p id="progressText">0 of 12 topics completed</p>
+<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+<p><small>Your progress is saved in this browser.</small></p>
+<button class="btn btn-blue" onclick="resetProgress()" type="button">Reset Progress</button>
+</div>
+</div>
+</section>
+<div id="learning-dashboard">
+<div aria-label="Learning dashboard" class="dashboard">
+<div class="stat-card"><strong id="dashTopics">0/12</strong><span>Topics completed</span></div>
+<div class="stat-card"><strong id="dashProgress">0%</strong><span>Overall progress</span></div>
+<div class="stat-card"><strong>12</strong><span>Core topic areas</span></div>
+<div class="stat-card"><strong>24/7</strong><span>Offline-ready learning</span></div>
+</div>
+<div class="cbc-strip">
+<div class="cbc-card"><b>Problem solving</b>Apply mathematics to unfamiliar situations.</div>
+<div class="cbc-card"><b>Critical thinking</b>Explain methods and check whether answers make sense.</div>
+<div class="cbc-card"><b>Creativity &amp; innovation</b>Use different methods and representations.</div>
+<div class="cbc-card"><b>Digital literacy</b>Use interactive tools responsibly to support learning.</div>
+</div>
+</div>
+
+<section id="topics">
+<span class="section-label">CONTENT</span><h2>Form 1 Topic Library</h2>
+<div class="topic-grid" id="topicGrid">
+<a class="topic-card searchable" href="#real-numbers"><div class="topic-icon">🔢</div><h3>Real Numbers</h3><p>Number types, factors, prime factors, HCF and LCM.</p></a>
+<a class="topic-card searchable" href="#sets"><div class="topic-icon">⭕</div><h3>Sets</h3><p>Universal sets, subsets, complements, intersections and applications.</p></a>
+<a class="topic-card searchable" href="#directed-numbers"><div class="topic-icon">±</div><h3>Directed Numbers</h3><p>Positive and negative numbers and operations.</p></a>
+<a class="topic-card searchable" href="#algebra"><div class="topic-icon">𝑥</div><h3>Algebra</h3><p>Simplifying, substitution, evaluation and factorising.</p></a>
+<a class="topic-card searchable" href="#coordinate-geometry"><div class="topic-icon">📈</div><h3>Coordinate Geometry</h3><p>Coordinates, gradient, midpoint, distance and straight lines.</p></a>
+<a class="topic-card searchable" href="#relations-functions"><div class="topic-icon">↔️</div><h3>Relations &amp; Functions</h3><p>Inputs, outputs, domain, range and linear functions.</p></a>
+<a class="topic-card searchable" href="#approximations"><div class="topic-icon">≈</div><h3>Approximations</h3><p>Rounding, estimation, error, limits and tolerance.</p></a>
+<a class="topic-card searchable" href="#angles-polygons"><div class="topic-icon">📐</div><h3>Angles &amp; Polygons</h3><p>Angles, triangles, polygons and elevation/depression.</p></a>
+<a class="topic-card searchable" href="#financial-arithmetic"><div class="topic-icon">💰</div><h3>Financial Arithmetic</h3><p>Interest, hire purchase, VAT, tax, bills and dividends.</p></a>
+<a class="topic-card searchable" href="#directions-bearings"><div class="topic-icon">🧭</div><h3>Directions &amp; Bearings</h3><p>Compass directions, three-figure bearings and maps.</p></a>
+<a class="topic-card searchable" href="#similarity-congruence"><div class="topic-icon">⬡</div><h3>Similarity &amp; Congruence</h3><p>Scale factor, maps and length, area and volume ratios.</p></a>
+<a class="topic-card searchable" href="#mensuration"><div class="topic-icon">⭕</div><h3>Mensuration</h3><p>Radius, diameter, circumference, arcs, sectors and area.</p></a>
+</div>
+</section>
+<section id="real-numbers">
+
+<div class="lesson-tools">
+<button class="small-btn" onclick="window.print()" type="button">🖨 Print page</button>
+<a class="small-btn" href="#study-notes">✍ Add to notes</a>
+</div>
+<div class="topic-complete">
+<span>Finished studying this topic?</span>
+<button onclick="completeTopic('real-numbers')" type="button">Mark Topic Complete</button>
+</div>
+<span class="section-label">TOPIC 1</span><h2>Real Numbers</h2><div aria-label="CBC learning competencies" class="competency-tags"><span>Problem solving</span><span>Critical thinking</span><span>Application</span><span>Communication</span></div>
+<p>Real numbers are numbers that can be represented on a number line.</p>
+<table><tr><th>Type</th><th>Meaning</th><th>Examples</th></tr>
+<tr><td>Natural</td><td>Counting numbers starting at 1 in this course.</td><td>1, 2, 3, 4...</td></tr>
+<tr><td>Whole</td><td>Natural numbers together with zero.</td><td>0, 1, 2, 3...</td></tr>
+<tr><td>Integer</td><td>Positive and negative whole numbers including zero.</td><td>..., -2, -1, 0, 1, 2...</td></tr>
+<tr><td>Prime</td><td>Exactly two positive factors: 1 and itself.</td><td>2, 3, 5, 7, 11</td></tr>
+<tr><td>Composite</td><td>Has more than two positive factors.</td><td>4, 6, 8, 9, 10</td></tr>
+<tr><td>Rational</td><td>Can be written as a/b, b ≠ 0.</td><td>1/2, 3, 0.75</td></tr>
+<tr><td>Irrational</td><td>Cannot be written exactly as a ratio of integers.</td><td>√2, π</td></tr>
+</table>
+<div class="diagram">
+<svg aria-label="Number line" role="img" viewbox="0 0 700 110">
+<line stroke="#2563eb" stroke-width="4" x1="50" x2="650" y1="55" y2="55"></line>
+<g fill="#172033" font-family="Arial" text-anchor="middle">
+<text x="80" y="88">-3</text><text x="200" y="88">-2</text><text x="320" y="88">-1</text><text x="440" y="88">0</text><text x="560" y="88">1</text><text x="650" y="88">2</text>
+</g>
+<g stroke="#111827" stroke-width="3"><line x1="80" x2="80" y1="45" y2="65"></line><line x1="200" x2="200" y1="45" y2="65"></line><line x1="320" x2="320" y1="45" y2="65"></line><line x1="440" x2="440" y1="45" y2="65"></line><line x1="560" x2="560" y1="45" y2="65"></line><line x1="650" x2="650" y1="45" y2="65"></line></g>
+</svg></div>
+<h3>Factors, HCF and LCM</h3>
+<p>A factor divides a number exactly. The HCF is the greatest common factor. The LCM is the smallest positive common multiple.</p>
+<div class="example"><h4>Worked example</h4><p>Find the HCF and LCM of 12 and 18.</p><div class="math">12 = 2² × 3
+18 = 2 × 3²
+HCF = 2 × 3 = 6
+LCM = 2² × 3² = 36</div></div>
+<div class="activity"><span class="activity-label">ACTIVITY</span><ol><li>Classify 29 as prime or composite.</li><li>Write 72 as a product of prime factors.</li><li>Find the HCF of 24 and 40.</li><li>Find the LCM of 6 and 15.</li><li>Explain the difference between rational and irrational numbers.</li></ol></div>
+<button class="btn btn-blue" onclick="completeTopic('real-numbers')" type="button">✓ Mark Topic Complete</button>
+</section>
+<section id="sets">
+
+<div class="lesson-tools">
+<button class="small-btn" onclick="window.print()" type="button">🖨 Print page</button>
+<a class="small-btn" href="#study-notes">✍ Add to notes</a>
+</div>
+<div class="topic-complete">
+<span>Finished studying this topic?</span>
+<button onclick="completeTopic('sets')" type="button">Mark Topic Complete</button>
+</div>
+<span class="section-label">TOPIC 2</span><h2>Sets</h2><div aria-label="CBC learning competencies" class="competency-tags"><span>Problem solving</span><span>Critical thinking</span><span>Application</span><span>Communication</span></div>
+<p>A set is a well-defined collection of objects called elements.</p>
+<h3>Representing Sets</h3>
+<p>Sets can be represented by listing elements or using set-builder notation.</p>
+<div class="math">A = {2, 4, 6, 8}
+B = {x : x is an even number less than 10}</div>
+<table><tr><th>Concept</th><th>Meaning</th></tr>
+<tr><td>Empty set</td><td>A set with no elements, ∅.</td></tr><tr><td>Singleton</td><td>A set with exactly one element.</td></tr>
+<tr><td>Finite set</td><td>A set with a definite number of elements.</td></tr><tr><td>Infinite set</td><td>A set that continues without end.</td></tr>
+<tr><td>Subset</td><td>Every element of A is also in B: A ⊆ B.</td></tr><tr><td>Intersection</td><td>Elements common to two sets: A ∩ B.</td></tr>
+<tr><td>Union</td><td>Elements in A or B or both: A ∪ B.</td></tr><tr><td>Complement</td><td>Elements in U that are not in A: A′.</td></tr>
+</table>
+<div class="diagram">
+<svg aria-label="Venn diagram showing intersection" role="img" viewbox="0 0 700 250">
+<rect fill="#f8fafc" height="210" rx="12" stroke="#94a3b8" width="660" x="20" y="20"></rect>
+<text font-size="18" x="45" y="50">U</text>
+<circle cx="300" cy="125" fill="#bfdbfe" fill-opacity=".8" r="85" stroke="#2563eb" stroke-width="3"></circle>
+<circle cx="400" cy="125" fill="#a7f3d0" fill-opacity=".8" r="85" stroke="#059669" stroke-width="3"></circle>
+<text font-size="20" x="260" y="105">A</text><text font-size="20" x="425" y="105">B</text>
+<text font-size="17" x="335" y="135">A ∩ B</text>
+</svg></div>
+<div class="example"><h4>Worked example</h4><p>Let A={1,2,3,4} and B={3,4,5,6}.</p><div class="math">A ∩ B = {3,4}
+A ∪ B = {1,2,3,4,5,6}</div></div>
+<div class="activity"><span class="activity-label">ACTIVITY</span><p>In a class of 40 learners, 24 study Mathematics, 18 study Science and 8 study both.</p><ol><li>Find Mathematics only.</li><li>Find Science only.</li><li>Find at least one subject.</li><li>Find neither subject.</li></ol></div>
+<button class="btn btn-blue" onclick="completeTopic('sets')" type="button">✓ Mark Topic Complete</button>
+</section>
+<section id="directed-numbers">
+
+<div class="lesson-tools">
+<button class="small-btn" onclick="window.print()" type="button">🖨 Print page</button>
+<a class="small-btn" href="#study-notes">✍ Add to notes</a>
+</div>
+<div class="topic-complete">
+<span>Finished studying this topic?</span>
+<button onclick="completeTopic('directed-numbers')" type="button">Mark Topic Complete</button>
+</div>
+<span class="section-label">TOPIC 3</span><h2>Directed Numbers</h2><div aria-label="CBC learning competencies" class="competency-tags"><span>Problem solving</span><span>Critical thinking</span><span>Application</span><span>Communication</span></div>
+<p>Directed numbers include positive and negative numbers. A number line helps compare their positions.</p>
+<div class="math">Same signs when adding: add magnitudes and keep the sign.
+Different signs: subtract magnitudes and keep the sign of the larger magnitude.
+Multiplication/division: same signs → positive; different signs → negative.</div>
+<div class="example"><h4>Worked examples</h4><div class="math">(+8)+(-3)=+5
+(-9)+(+4)=-5
+7-(-3)=10
+(-4)×(-3)=+12
+(-12)÷(+3)=-4</div></div>
+<div class="activity"><span class="activity-label">ACTIVITY</span><ol><li>(+8)+(-13)</li><li>(-7)-(-12)</li><li>(-6)×(+4)</li><li>(-36)÷(-6)</li><li>A temperature of 4°C falls by 9°C. Find the new temperature.</li></ol></div>
+<button class="btn btn-blue" onclick="completeTopic('directed-numbers')" type="button">✓ Mark Topic Complete</button>
+</section>
+<section id="algebra">
+
+<div class="lesson-tools">
+<button class="small-btn" onclick="window.print()" type="button">🖨 Print page</button>
+<a class="small-btn" href="#study-notes">✍ Add to notes</a>
+</div>
+<div class="topic-complete">
+<span>Finished studying this topic?</span>
+<button onclick="completeTopic('algebra')" type="button">Mark Topic Complete</button>
+</div>
+<span class="section-label">TOPIC 4</span><h2>Algebra</h2><div aria-label="CBC learning competencies" class="competency-tags"><span>Problem solving</span><span>Critical thinking</span><span>Application</span><span>Communication</span></div>
+<p>Algebra uses letters and numbers to represent quantities and relationships.</p>
+<h3>Terms, Coefficients and Constants</h3><div class="math">In 5x + 7:
+5 = coefficient
+x = variable
+7 = constant</div>
+<h3>Simplifying</h3><div class="example"><div class="math">4x + 3 + 2x + 5
+= 6x + 8</div></div>
+<h3>Substitution and Evaluation</h3><div class="example"><p>If x=4, evaluate 3x+2.</p><div class="math">3(4)+2 = 14</div></div>
+<h3>Factorising</h3><div class="example"><div class="math">6x + 12 = 6(x + 2)
+10a + 15 = 5(2a + 3)</div></div>
+<div class="activity"><span class="activity-label">ACTIVITY</span><ol><li>Simplify 7x+4x-3x+5.</li><li>If x=4 and y=3, evaluate 2x+3y.</li><li>Factorise 8x+24.</li><li>Solve 3x+5=20.</li><li>Write an expression for “five more than twice a number”.</li></ol></div>
+<button class="btn btn-blue" onclick="completeTopic('algebra')" type="button">✓ Mark Topic Complete</button>
+</section>
+<section id="coordinate-geometry">
+
+<div class="lesson-tools">
+<button class="small-btn" onclick="window.print()" type="button">🖨 Print page</button>
+<a class="small-btn" href="#study-notes">✍ Add to notes</a>
+</div>
+<div class="topic-complete">
+<span>Finished studying this topic?</span>
+<button onclick="completeTopic('coordinate-geometry')" type="button">Mark Topic Complete</button>
+</div>
+<span class="section-label">TOPIC 5</span><h2>Coordinate Geometry</h2><div aria-label="CBC learning competencies" class="competency-tags"><span>Problem solving</span><span>Critical thinking</span><span>Application</span><span>Communication</span></div>
+<p>Coordinates locate points on a Cartesian plane. A point is written as (x,y).</p>
+<div class="diagram"><svg aria-label="Coordinate plane" role="img" viewbox="0 0 700 320">
+<line stroke="#111827" stroke-width="3" x1="80" x2="640" y1="160" y2="160"></line><line stroke="#111827" stroke-width="3" x1="350" x2="350" y1="30" y2="290"></line>
+<line stroke="#2563eb" stroke-width="4" x1="190" x2="510" y1="50" y2="270"></line>
+<circle cx="510" cy="270" fill="#dc2626" r="7"></circle><text font-size="18" x="520" y="260">B</text>
+<circle cx="190" cy="50" fill="#dc2626" r="7"></circle><text font-size="18" x="200" y="45">A</text>
+<text font-size="18" x="625" y="150">x</text><text font-size="18" x="360" y="40">y</text>
+</svg></div>
+<h3>Key formulas</h3>
+<div class="math">Midpoint = ((x₁+x₂)/2, (y₁+y₂)/2)
+Gradient m = (y₂-y₁)/(x₂-x₁)
+Distance = √[(x₂-x₁)² + (y₂-y₁)²]
+Straight line: y = mx + c</div>
+<div class="example"><h4>Worked example</h4><p>For A(2,3), B(6,11):</p><div class="math">m=(11-3)/(6-2)=2
+Midpoint=((2+6)/2,(3+11)/2)=(4,7)
+Distance=√(4²+8²)=√80=4√5</div></div>
+<div class="activity"><span class="activity-label">ACTIVITY</span><ol><li>Find the gradient through (1,2) and (5,10).</li><li>Find the midpoint of (3,4) and (9,12).</li><li>Find the distance between (2,3) and (6,6).</li><li>Give two points on y=2x+1.</li></ol></div>
+<button class="btn btn-blue" onclick="completeTopic('coordinate-geometry')" type="button">✓ Mark Topic Complete</button>
+</section>
+<section id="relations-functions">
+
+<div class="lesson-tools">
+<button class="small-btn" onclick="window.print()" type="button">🖨 Print page</button>
+<a class="small-btn" href="#study-notes">✍ Add to notes</a>
+</div>
+<div class="topic-complete">
+<span>Finished studying this topic?</span>
+<button onclick="completeTopic('relations-functions')" type="button">Mark Topic Complete</button>
+</div>
+<span class="section-label">TOPIC 6</span><h2>Relations and Functions</h2><div aria-label="CBC learning competencies" class="competency-tags"><span>Problem solving</span><span>Critical thinking</span><span>Application</span><span>Communication</span></div>
+<p>A relation connects elements. A function is a relation in which every input has exactly one output.</p>
+<table><tr><th>Term</th><th>Meaning</th></tr><tr><td>Input</td><td>Value entered.</td></tr><tr><td>Output</td><td>Value produced.</td></tr><tr><td>Domain</td><td>Set of input values.</td></tr><tr><td>Range</td><td>Set of output values.</td></tr></table>
+<div class="diagram"><svg aria-label="Function mapping diagram" role="img" viewbox="0 0 700 220">
+<rect fill="#dbeafe" height="150" rx="18" stroke="#2563eb" stroke-width="3" width="180" x="70" y="35"></rect>
+<rect fill="#dcfce7" height="150" rx="18" stroke="#16a34a" stroke-width="3" width="180" x="450" y="35"></rect>
+<text font-size="18" x="125" y="25">DOMAIN</text><text font-size="18" x="500" y="25">RANGE</text>
+<text font-size="20" x="145" y="75">1</text><text font-size="20" x="145" y="115">2</text><text font-size="20" x="145" y="155">3</text>
+<text font-size="20" x="520" y="75">4</text><text font-size="20" x="520" y="115">7</text><text font-size="20" x="520" y="155">10</text>
+<g stroke="#2563eb" stroke-width="3"><line x1="175" x2="515" y1="70" y2="70"></line><line x1="175" x2="515" y1="110" y2="110"></line><line x1="175" x2="515" y1="150" y2="150"></line></g>
+</svg></div>
+<div class="example"><h4>Worked example</h4><p>For f(x)=2x+3, f(4)=11.</p><p>To find an inverse:</p><div class="math">y=2x+3
+x=2y+3
+y=(x-3)/2
+Therefore f⁻¹(x)=(x-3)/2</div></div>
+<div class="activity"><span class="activity-label">ACTIVITY</span><p>Given f(x)=3x+2:</p><ol><li>Find f(1).</li><li>Find f(4).</li><li>Complete the table for x=-2,-1,0,1,2.</li><li>State the domain and range of those five values.</li></ol></div>
+<button class="btn btn-blue" onclick="completeTopic('relations-functions')" type="button">✓ Mark Topic Complete</button>
+</section>
+<section id="approximations">
+
+<div class="lesson-tools">
+<button class="small-btn" onclick="window.print()" type="button">🖨 Print page</button>
+<a class="small-btn" href="#study-notes">✍ Add to notes</a>
+</div>
+<div class="topic-complete">
+<span>Finished studying this topic?</span>
+<button onclick="completeTopic('approximations')" type="button">Mark Topic Complete</button>
+</div>
+<span class="section-label">TOPIC 7</span><h2>Approximations and Estimations</h2><div aria-label="CBC learning competencies" class="competency-tags"><span>Problem solving</span><span>Critical thinking</span><span>Application</span><span>Communication</span></div>
+<p>Approximation replaces an exact value with a nearby value that is easier to use.</p>
+<table><tr><th>Rounding</th><th>Tolerance</th></tr><tr><td>Nearest 10</td><td>±5</td></tr><tr><td>Nearest 100</td><td>±50</td></tr><tr><td>Nearest whole number</td><td>±0.5</td></tr><tr><td>Nearest tenth</td><td>±0.05</td></tr></table>
+<div class="math">Error = True Value − Approximate Value
+Absolute Error = |True Value − Approximate Value|
+Lower Limit = stated value − tolerance
+Upper Limit = stated value + tolerance</div>
+<div class="example"><h4>Worked example</h4><p>50 cm correct to the nearest centimetre means:</p><div class="math">49.5 cm ≤ true value &lt; 50.5 cm</div></div>
+<div class="activity"><span class="activity-label">ACTIVITY</span><ol><li>Round 58,764 to the nearest 100.</li><li>Round 58,764 to the nearest 1,000.</li><li>Estimate 49.7×20.3 by rounding to convenient values.</li><li>A length is 60 cm correct to the nearest cm. Find lower limit, upper limit and tolerance.</li></ol></div>
+<button class="btn btn-blue" onclick="completeTopic('approximations')" type="button">✓ Mark Topic Complete</button>
+</section>
+<section id="angles-polygons">
+
+<div class="lesson-tools">
+<button class="small-btn" onclick="window.print()" type="button">🖨 Print page</button>
+<a class="small-btn" href="#study-notes">✍ Add to notes</a>
+</div>
+<div class="topic-complete">
+<span>Finished studying this topic?</span>
+<button onclick="completeTopic('angles-polygons')" type="button">Mark Topic Complete</button>
+</div>
+<span class="section-label">TOPIC 8</span><h2>Angles and Polygons</h2><div aria-label="CBC learning competencies" class="competency-tags"><span>Problem solving</span><span>Critical thinking</span><span>Application</span><span>Communication</span></div>
+<p>An angle is formed when two lines or rays meet at a point.</p>
+<table><tr><th>Angle</th><th>Size</th></tr><tr><td>Acute</td><td>0° &lt; angle &lt; 90°</td></tr><tr><td>Right</td><td>90°</td></tr><tr><td>Obtuse</td><td>90° &lt; angle &lt; 180°</td></tr><tr><td>Straight</td><td>180°</td></tr><tr><td>Reflex</td><td>180° &lt; angle &lt; 360°</td></tr></table>
+<div class="math">Angles on a straight line = 180°
+Angles around a point = 360°
+Angles in a triangle = 180°
+Interior sum of n-gon = (n−2)×180°
+One exterior angle of regular polygon = 360°/n</div>
+<div class="example"><h4>Worked example</h4><p>A regular hexagon has six sides.</p><div class="math">Interior sum=(6−2)×180°=720°
+Each interior angle=720°÷6=120°
+Each exterior angle=360°÷6=60°</div></div>
+<div class="activity"><span class="activity-label">ACTIVITY</span><ol><li>Find the missing angle on a straight line if one angle is 65°.</li><li>Find the missing angle of a triangle with angles 45° and 70°.</li><li>Find the interior sum of a hexagon.</li><li>Find each interior angle of a regular hexagon.</li><li>A regular polygon has an exterior angle of 30°. Find its number of sides.</li></ol></div>
+<button class="btn btn-blue" onclick="completeTopic('angles-polygons')" type="button">✓ Mark Topic Complete</button>
+</section>
+<section id="financial-arithmetic">
+
+<div class="lesson-tools">
+<button class="small-btn" onclick="window.print()" type="button">🖨 Print page</button>
+<a class="small-btn" href="#study-notes">✍ Add to notes</a>
+</div>
+<div class="topic-complete">
+<span>Finished studying this topic?</span>
+<button onclick="completeTopic('financial-arithmetic')" type="button">Mark Topic Complete</button>
+</div>
+<span class="section-label">TOPIC 9</span><h2>Financial Arithmetic</h2><div aria-label="CBC learning competencies" class="competency-tags"><span>Problem solving</span><span>Critical thinking</span><span>Application</span><span>Communication</span></div>
+<p>Financial mathematics applies mathematics to money, saving, borrowing, buying and everyday financial decisions.</p>
+<div class="math">Simple Interest: I = PRT/100
+Amount: A = P + I
+Compound Amount (annual): A = P(1+r)ⁿ
+Hire Purchase = Deposit + Total Instalments
+VAT = Price before VAT × VAT rate
+Units used = Current meter reading − Previous reading</div>
+<div class="example"><h4>Worked example</h4><p>K4,000 at 6% simple interest for 3 years:</p><div class="math">I=(4000×6×3)/100=K720
+A=4000+720=K4,720</div></div>
+<div class="note"><strong>VAT note:</strong> A question should provide the applicable VAT rate when the rate is not otherwise specified.</div>
+<div class="activity"><span class="activity-label">ACTIVITY</span><ol><li>Find the simple interest on K5,000 at 6% for 2 years.</li><li>Find the amount.</li><li>A television costs K7,000 cash. Deposit K1,500 plus 12 instalments of K550. Find the hire purchase price and extra cost.</li><li>A meter reading changes from 12,450 to 12,730. Find units used.</li></ol></div>
+<button class="btn btn-blue" onclick="completeTopic('financial-arithmetic')" type="button">✓ Mark Topic Complete</button>
+</section>
+<section id="directions-bearings">
+
+<div class="lesson-tools">
+<button class="small-btn" onclick="window.print()" type="button">🖨 Print page</button>
+<a class="small-btn" href="#study-notes">✍ Add to notes</a>
+</div>
+<div class="topic-complete">
+<span>Finished studying this topic?</span>
+<button onclick="completeTopic('directions-bearings')" type="button">Mark Topic Complete</button>
+</div>
+<span class="section-label">TOPIC 10</span><h2>Directions and Bearings</h2><div aria-label="CBC learning competencies" class="competency-tags"><span>Problem solving</span><span>Critical thinking</span><span>Application</span><span>Communication</span></div>
+<p>Bearings give directions accurately and are measured clockwise from North.</p>
+<div class="diagram"><svg aria-label="Compass and bearings" role="img" viewbox="0 0 420 420">
+<circle cx="210" cy="210" fill="#f8fafc" r="150" stroke="#94a3b8" stroke-width="3"></circle>
+<line stroke="#111827" stroke-width="3" x1="210" x2="210" y1="45" y2="375"></line>
+<line stroke="#111827" stroke-width="3" x1="45" x2="375" y1="210" y2="210"></line>
+<polygon fill="#2563eb" points="210,35 198,75 210,65 222,75"></polygon>
+<text font-size="22" x="200" y="25">N</text><text font-size="22" x="365" y="218">E</text><text font-size="22" x="200" y="405">S</text><text font-size="22" x="20" y="218">W</text>
+<text font-size="18" x="278" y="130">045°</text><text font-size="18" x="285" y="305">135°</text>
+</svg></div>
+<div class="math">N = 000°
+E = 090°
+S = 180°
+W = 270°
+Back bearing: if bearing &lt;180°, add 180°; otherwise subtract 180°.</div>
+<div class="example"><h4>Worked example</h4><p>A direction of 135° is between South and East, so it is SE. Its back bearing is 315°.</p></div>
+<div class="activity"><span class="activity-label">ACTIVITY</span><ol><li>Give the bearing of East.</li><li>Give the bearing of SW.</li><li>Find the back bearing of 060°.</li><li>Find the back bearing of 225°.</li><li>Explain what a three-figure bearing means.</li></ol></div>
+<button class="btn btn-blue" onclick="completeTopic('directions-bearings')" type="button">✓ Mark Topic Complete</button>
+</section>
+<section id="similarity-congruence">
+
+<div class="lesson-tools">
+<button class="small-btn" onclick="window.print()" type="button">🖨 Print page</button>
+<a class="small-btn" href="#study-notes">✍ Add to notes</a>
+</div>
+<div class="topic-complete">
+<span>Finished studying this topic?</span>
+<button onclick="completeTopic('similarity-congruence')" type="button">Mark Topic Complete</button>
+</div>
+<span class="section-label">TOPIC 11</span><h2>Similarity and Congruence</h2><div aria-label="CBC learning competencies" class="competency-tags"><span>Problem solving</span><span>Critical thinking</span><span>Application</span><span>Communication</span></div>
+<p>Similar shapes have the same shape but may have different sizes. Congruent shapes have the same shape and the same size.</p>
+<div class="math">Length scale factor = new length ÷ original length
+Area scale factor = k²
+Volume scale factor = k³
+Area ratio = k² : 1
+Volume ratio = k³ : 1</div>
+<h3>Scale Drawings and Maps</h3>
+<div class="example"><p>Scale 1:50,000 means 1 cm on the map represents 50,000 cm on the ground.</p><div class="math">6 cm × 50,000 = 300,000 cm = 3 km</div></div>
+<h3>Common Solids</h3>
+<table><tr><th>Solid</th><th>Volume</th><th>Surface Area</th></tr>
+<tr><td>Cube</td><td>a³</td><td>6a²</td></tr><tr><td>Cuboid</td><td>lwh</td><td>2(lw+lh+wh)</td></tr>
+<tr><td>Cylinder</td><td>πr²h</td><td>2πr²+2πrh</td></tr><tr><td>Sphere</td><td>4πr³/3</td><td>4πr²</td></tr>
+<tr><td>Cone</td><td>πr²h/3</td><td>πr²+πrl</td></tr></table>
+<div class="activity"><span class="activity-label">STRONG ACTIVITY</span><ol><li>On a 1:50,000 map, find the real distance represented by 8 cm.</li><li>A real road is 7 km long. Find its map length at 1:50,000.</li><li>A shape is enlarged by scale factor 3. Find its area and volume scale factors.</li><li>A solid has volume 40 cm³ and is enlarged by factor 2. Find the new volume.</li><li>Explain similarity and congruence in your own words.</li></ol></div>
+<button class="btn btn-blue" onclick="completeTopic('similarity-congruence')" type="button">✓ Mark Topic Complete</button>
+</section>
+<section id="mensuration">
+
+<div class="lesson-tools">
+<button class="small-btn" onclick="window.print()" type="button">🖨 Print page</button>
+<a class="small-btn" href="#study-notes">✍ Add to notes</a>
+</div>
+<div class="topic-complete">
+<span>Finished studying this topic?</span>
+<button onclick="completeTopic('mensuration')" type="button">Mark Topic Complete</button>
+</div>
+<span class="section-label">TOPIC 12</span><h2>Mensuration</h2><div aria-label="CBC learning competencies" class="competency-tags"><span>Problem solving</span><span>Critical thinking</span><span>Application</span><span>Communication</span></div>
+<p>Mensuration deals with measurements such as length, perimeter, area and volume. This lesson focuses on circles and sectors.</p>
+<div class="diagram"><svg aria-label="Circle with radius, diameter and sector" role="img" viewbox="0 0 720 330">
+<circle cx="230" cy="165" fill="#eff6ff" r="115" stroke="#2563eb" stroke-width="4"></circle>
+<line stroke="#dc2626" stroke-width="4" x1="115" x2="345" y1="165" y2="165"></line>
+<line stroke="#059669" stroke-width="4" x1="230" x2="300" y1="165" y2="74"></line>
+<path d="M230 165 L300 74 A115 115 0 0 1 345 165 Z" fill="#bfdbfe" fill-opacity=".8"></path>
+<text font-size="18" x="145" y="150">diameter</text><text font-size="18" x="260" y="130">r</text>
+<text font-size="20" x="425" y="90">Arc</text><text font-size="20" x="425" y="125">Sector</text><text font-size="20" x="425" y="160">θ = central angle</text>
+</svg></div>
+<div class="math">d = 2r
+C = 2πr = πd
+Area of circle = πr²
+Arc length = (θ/360°) × 2πr
+Area of sector = (θ/360°) × πr²
+Perimeter of sector = 2r + arc length</div>
+<div class="example"><h4>Worked example</h4><p>A circle has radius 14 cm. Find its circumference and area using π=22/7.</p><div class="math">C=2×22/7×14=88 cm
+A=22/7×14²=616 cm²</div></div>
+<div class="example"><h4>Minor and major sectors</h4><p>If a minor sector has angle θ, the major angle is 360°−θ.</p><div class="math">Minor area=(θ/360°)πr²
+Major area=πr²−Minor area</div></div>
+<div class="activity"><span class="activity-label">STRONG ACTIVITY</span><ol><li>A circle has radius 10 cm. Find its diameter.</li><li>A circle has diameter 28 m. Find its circumference.</li><li>Find the area of a circle of radius 14 cm.</li><li>A 90° sector has radius 14 cm. Find its arc length.</li><li>Find the area of that sector.</li><li>Find the perimeter of the sector.</li><li>Find the remaining major-sector area.</li></ol></div>
+<button class="btn btn-blue" onclick="completeTopic('mensuration')" type="button">✓ Mark Topic Complete</button>
+</section>
+
+<section id="resource-centre">
+<span class="section-label">ZAMBIA RESOURCES</span>
+<h2>Mathematics Pamphlets &amp; Past Papers</h2>
+<div class="resource-hero">
+<h3>Study beyond the lessons</h3>
+<p>Use these resources for revision, exam preparation and deeper study. The links below prioritise official Zambia education sources, especially the Ministry of Education and the Examinations Council of Zambia (ECZ).</p>
+<div class="resource-filter" role="group" aria-label="Resource categories">
+<button class="active" onclick="filterResources('all',this)" type="button">All Resources</button>
+<button onclick="filterResources('pamphlet',this)" type="button">Pamphlets &amp; Syllabus</button>
+<button onclick="filterResources('pastpaper',this)" type="button">Past Papers &amp; Exams</button>
+</div>
+</div>
+<div class="resource-grid" id="resourceGrid">
+<article class="resource-card" data-resource-type="pamphlet">
+<div><div class="resource-icon">📘</div><h3>Mathematics I Syllabus — Forms 1–4</h3><p>The official Zambia Ministry of Education Mathematics I syllabus. Use it to check topics, learning outcomes and curriculum direction.</p><div class="resource-meta"><span class="resource-tag">OFFICIAL</span><span class="resource-tag">FORMS 1–4</span></div></div>
+<a class="btn btn-blue" href="https://www.edu.gov.zm/wp-content/uploads/2025/04/MATHEMATICS-O-LEVEL-FORMS-1-4.pdf" rel="noopener" target="_blank">Open Syllabus PDF ↗</a>
+</article>
+<article class="resource-card" data-resource-type="pamphlet">
+<div><div class="resource-icon">📚</div><h3>Ministry Teaching Modules</h3><p>Visit the Ministry of Education curriculum downloads to find teaching modules and other official learning materials for Form 1–6.</p><div class="resource-meta"><span class="resource-tag">OFFICIAL</span><span class="resource-tag">TEACHING MATERIALS</span></div></div>
+<a class="btn btn-blue" href="https://www.edu.gov.zm/?page_id=1142" rel="noopener" target="_blank">Open Ministry Resources ↗</a>
+</article>
+<article class="resource-card" data-resource-type="pastpaper">
+<div><div class="resource-icon">📝</div><h3>ECZ Specimen Papers</h3><p>Official ECZ specimen-paper resources. These are useful for understanding the style and structure of national assessment.</p><div class="resource-meta"><span class="resource-tag">ECZ</span><span class="resource-tag">SPECIMEN</span></div></div>
+<a class="btn btn-blue" href="https://www.exams-council.org.zm/guidlines/" rel="noopener" target="_blank">Open ECZ Guidelines ↗</a>
+</article>
+<article class="resource-card" data-resource-type="pastpaper">
+<div><div class="resource-icon">📄</div><h3>ECZ School Certificate</h3><p>Official ECZ School Certificate examination information, including current examination information and links provided by ECZ.</p><div class="resource-meta"><span class="resource-tag">ECZ</span><span class="resource-tag">EXAMINATION</span></div></div>
+<a class="btn btn-blue" href="https://www.exams-council.org.zm/grade-12/" rel="noopener" target="_blank">Open ECZ Exams ↗</a>
+</article>
+<article class="resource-card" data-resource-type="pastpaper">
+<div><div class="resource-icon">📊</div><h3>ECZ Mathematics Performance Reports</h3><p>Official examination-performance reports contain mathematics assessment observations and areas where candidates commonly need improvement.</p><div class="resource-meta"><span class="resource-tag">ECZ</span><span class="resource-tag">REVISION</span></div></div>
+<a class="btn btn-blue" href="https://www.exams-council.org.zm/research-reports/" rel="noopener" target="_blank">Open Reports ↗</a>
+</article>
+<article class="resource-card" data-resource-type="pamphlet">
+<div><div class="resource-icon">🇿🇲</div><h3>Zambia Curriculum Downloads</h3><p>Official Ministry curriculum page containing the current finalized syllabi and other curriculum documents.</p><div class="resource-meta"><span class="resource-tag">ZAMBIA CBC</span><span class="resource-tag">OFFICIAL</span></div></div>
+<a class="btn btn-blue" href="https://www.edu.gov.zm/?page_id=8082" rel="noopener" target="_blank">Open Curriculum Page ↗</a>
+</article>
+</div>
+<div class="resource-notice"><strong>About past papers:</strong> This hub links to official ECZ examination resources rather than copying complete copyrighted examination papers into the website. Where ECZ publishes a paper or specimen publicly, use the official source link to view it.</div>
+</section>
+<section id="cbc-alignment">
+<span class="section-label">CURRICULUM ALIGNMENT</span>
+<h2>New Zambia CBC Learning Approach</h2>
+<p>This independent learning resource is designed around the practical, competence-focused direction of Zambia's 2023 curriculum and the Ministry of Education's Mathematics I syllabus for Secondary Education Ordinary Level Forms 1–4.</p>
+<div class="important"><strong>Important:</strong> This website is not an official Ministry of Education or ECZ website. Use the official syllabus, your teacher's scheme of work and school assessments as the final authority.</div>
+<h3>How the lessons support competence development</h3>
+<table>
+<tr><th>Learning approach</th><th>How it appears on this website</th></tr>
+<tr><td>Knowledge and understanding</td><td>Definitions, rules, formulas and worked examples.</td></tr>
+<tr><td>Application</td><td>Real-life problems involving money, maps, measurement, graphs and everyday situations.</td></tr>
+<tr><td>Problem solving</td><td>Progressive activities and multi-step questions.</td></tr>
+<tr><td>Critical thinking</td><td>Explain, compare, estimate, verify and identify errors.</td></tr>
+<tr><td>Creativity and innovation</td><td>Multiple representations such as tables, diagrams, graphs and mappings.</td></tr>
+<tr><td>Digital literacy</td><td>Interactive quizzes, search, progress tracking and printable learning tools.</td></tr>
+</table>
+<h3>Suggested learning cycle</h3>
+<ol>
+<li><strong>Learn:</strong> read the concept and study the worked example.</li>
+<li><strong>Understand:</strong> explain the rule in your own words.</li>
+<li><strong>Practise:</strong> complete the activity without looking at the answer.</li>
+<li><strong>Apply:</strong> solve a real-life or unfamiliar problem.</li>
+<li><strong>Review:</strong> check mistakes and return to the relevant lesson.</li>
+</ol>
+<p><a href="https://www.edu.gov.zm/wp-content/uploads/2025/04/MATHEMATICS-O-LEVEL-FORMS-1-4.pdf" rel="noopener" target="_blank">View the official Mathematics I syllabus</a></p>
+</section>
+<section id="formula-sheet">
+<span class="section-label">REFERENCE</span><h2>Formula Sheet</h2>
+<div class="feature-grid">
+<div class="formula-card"><strong>Coordinate Geometry</strong><p>m=(y₂−y₁)/(x₂−x₁)</p><p>d=√[(x₂−x₁)²+(y₂−y₁)²]</p></div>
+<div class="formula-card"><strong>Financial</strong><p>I=PRT/100</p><p>A=P+I</p></div>
+<div class="formula-card"><strong>Polygons</strong><p>Interior sum=(n−2)180°</p><p>Exterior angle=360°/n</p></div>
+<div class="formula-card"><strong>Circles</strong><p>C=2πr</p><p>A=πr²</p></div>
+<div class="formula-card"><strong>Sectors</strong><p>Arc=(θ/360)2πr</p><p>Area=(θ/360)πr²</p></div>
+<div class="formula-card"><strong>Similarity</strong><p>Area factor=k²</p><p>Volume factor=k³</p></div>
+</div>
+</section>
+
+<section id="practice-generator">
+<span class="section-label">PRACTICE TOOL</span>
+<h2>Random Practice Generator</h2>
+<p>Generate a short problem, solve it yourself, then reveal the answer. This is designed for practice rather than replacing your teacher or formal assessment.</p>
+<div class="practice-box">
+<div class="tool-row">
+<button class="btn btn-blue" onclick="newPractice()" type="button">🎲 New Question</button>
+<button class="small-btn" onclick="showPracticeAnswer()" type="button">Show Answer</button>
+</div>
+<h3 id="practiceQuestion">Click “New Question” to begin.</h3>
+<input id="practiceAnswer" inputmode="decimal" placeholder="Type your answer" type="text"/>
+<button class="small-btn" onclick="checkPractice()" type="button">Check Answer</button>
+<div aria-live="polite" class="feedback hidden" id="practiceFeedback"></div>
+</div>
+</section>
+<section id="quiz">
+<span class="section-label">INTERACTIVE PRACTICE</span><h2>Quick Knowledge Check</h2>
+<form id="quizForm">
+<div class="quiz-q"><strong>1. What is the HCF of 12 and 18?</strong><label><input name="q1" type="radio" value="6"/>6</label><label><input name="q1" type="radio" value="12"/>12</label><label><input name="q1" type="radio" value="36"/>36</label></div>
+<div class="quiz-q"><strong>2. What is the gradient between (1,2) and (3,6)?</strong><label><input name="q2" type="radio" value="2"/>2</label><label><input name="q2" type="radio" value="3"/>3</label><label><input name="q2" type="radio" value="4"/>4</label></div>
+<div class="quiz-q"><strong>3. What is the area of a circle of radius 7 cm using 22/7?</strong><label><input name="q3" type="radio" value="154"/>154 cm²</label><label><input name="q3" type="radio" value="44"/>44 cm²</label><label><input name="q3" type="radio" value="49"/>49 cm²</label></div>
+<div class="quiz-q"><strong>4. What is the bearing of East?</strong><label><input name="q4" type="radio" value="090"/>090°</label><label><input name="q4" type="radio" value="180"/>180°</label><label><input name="q4" type="radio" value="270"/>270°</label></div>
+<div class="quiz-q"><strong>5. If the length scale factor is 3, what is the area scale factor?</strong><label><input name="q5" type="radio" value="9"/>9</label><label><input name="q5" type="radio" value="6"/>6</label><label><input name="q5" type="radio" value="27"/>27</label></div>
+<button class="btn btn-blue" onclick="gradeQuiz()" type="button">Check Score</button>
+</form>
+<div class="answer hidden" id="quizResult"></div>
+</section>
+<section id="cbc-exam">
+<span class="section-label">COMPREHENSIVE ASSESSMENT</span><h2>CBC-Style Form 1 Examination Activity</h2>
+<p>This assessment connects the topics taught on this page and emphasises calculation, reasoning and application.</p>
+<div class="activity">
+<h3>Question 1 — Real Numbers and Sets</h3>
+<ol><li>Write 84 as a product of prime factors.</li><li>Find the HCF of 24 and 36.</li><li>Let U={1,2,3,4,5,6,7,8,9,10}, A={2,4,6,8,10}, B={3,6,9}. Find A∩B and B′.</li></ol>
+</div>
+<div class="activity">
+<h3>Question 2 — Directed Numbers and Algebra</h3>
+<ol><li>Calculate −15+8−(−4).</li><li>Calculate (−6)×(−5)÷3.</li><li>Simplify 5x+3y−2x+7y.</li><li>Factorise 12a+18.</li><li>Solve 3x+5=20.</li></ol>
+</div>
+<div class="activity">
+<h3>Question 3 — Coordinate Geometry</h3>
+<p>For A(2,3) and B(6,11), find the gradient, midpoint and distance AB.</p>
+</div>
+<div class="activity">
+<h3>Question 4 — Relations and Functions</h3>
+<p>Given f(x)=2x+3, find f(1), f(5), and the range when the domain is {-2,-1,0,1,2}.</p>
+</div>
+<div class="activity">
+<h3>Question 5 — Approximations</h3>
+<ol><li>Round 48,763 to the nearest hundred.</li><li>Estimate 49.8×20.2 by rounding suitably.</li><li>State the limits for 50 cm correct to the nearest cm.</li></ol>
+</div>
+<div class="activity">
+<h3>Question 6 — Angles and Polygons</h3>
+<ol><li>Find the missing angle on a straight line if one angle is 65°.</li><li>Find each interior angle of a regular hexagon.</li><li>A regular polygon has an exterior angle of 40°. Find its number of sides.</li></ol>
+</div>
+<div class="activity">
+<h3>Question 7 — Financial Arithmetic</h3>
+<p>K4,000 is invested at 6% simple interest for 3 years. Find the interest and amount. A television costs K6,000 cash, or a deposit of K1,500 plus 12 instalments of K450. Find the hire purchase price and extra cost.</p>
+</div>
+<div class="activity">
+<h3>Question 8 — Bearings and Maps</h3>
+<ol><li>Give the bearing of East.</li><li>Find the back bearing of 135°.</li><li>A map scale is 1:50,000. Find the ground distance represented by 4 cm.</li></ol>
+</div>
+<div class="activity">
+<h3>Question 9 — Similarity and Congruence</h3>
+<ol><li>A shape is enlarged by scale factor 3. Find the area and volume scale factors.</li><li>Explain the difference between similar and congruent shapes.</li></ol>
+</div>
+<div class="activity">
+<h3>Question 10 — Mensuration</h3>
+<p>A circular garden has radius 14 m. Using π=22/7, calculate its diameter, circumference and area. A 90° sector is marked inside it. Find the arc length, sector area, perimeter and remaining major-sector area.</p>
+</div>
+<div class="important"><strong>Assessment reminder:</strong> Show working, use correct units, and check whether your answer is reasonable.</div>
+</section>
+<section id="answers">
+<span class="section-label">SELF-CHECK</span><h2>Selected Activity Answers</h2>
+<p>Use these only after attempting the questions yourself.</p>
+<div class="answer">
+<strong>Quick Check:</strong><br/>
+Real Numbers: HCF(12,18)=6; LCM(6,15)=30.<br/>
+Directed Numbers: (+8)+(−13)=−5; (−7)−(−12)=5; (−6)×4=−24; (−36)÷(−6)=6.<br/>
+Algebra: 7x+4x−3x+5=8x+5; 2(4)+3(3)=17; 8x+24=8(x+3); 3x+5=20 gives x=5.<br/>
+Coordinate Geometry: gradient through (1,2),(5,10)=2; midpoint of (3,4),(9,12)=(6,8); distance from (2,3) to (6,6)=5.<br/>
+Angles: straight-line missing angle=115°; triangle missing angle=65°; regular hexagon interior angle=120°; exterior 30° gives 12 sides.<br/>
+Bearings: East=090°; SW=225°; back bearing of 060°=240°; back bearing of 225°=045°.<br/>
+Similarity: k=3 gives area factor 9 and volume factor 27.<br/>
+Mensuration, r=14 m: diameter=28 m; circumference=88 m; area=616 m²; 90° arc=22 m; 90° sector area=154 m²; major area=462 m²; sector perimeter=50 m.
+</div>
+</section>
+
+<section id="study-notes">
+<span class="section-label">MY NOTES</span>
+<h2>Personal Study Notes</h2>
+<p>Write your own reminders, formulas or mistakes to review. Notes are stored only in this browser using local storage.</p>
+<textarea class="notes-area" id="studyNotes" placeholder="Write your mathematics notes here..."></textarea>
+<div class="tool-row">
+<button class="btn btn-blue" onclick="saveNotes()" type="button">Save Notes</button>
+<button class="small-btn" onclick="clearNotes()" type="button">Clear Notes</button>
+</div>
+<div aria-live="polite" class="note-status" id="noteStatus"></div>
+</section>
+<section id="about">
+<div class="important">This is an independent learning resource. It is not an official Ministry of Education or ECZ website.</div><span class="section-label">ABOUT THIS RESOURCE</span><h2>Curriculum and Learning Approach</h2>
+<p>This site is a learner-friendly study resource organised around the topics developed in this project. It is intended to support understanding, practice and application rather than replace a teacher, textbook or official assessment.</p>
+<div class="note"><strong>Curriculum reference:</strong> Zambia's Ministry of Education publishes the Mathematics I Syllabus for Secondary Education Ordinary Level Forms 1–4. This resource should be read alongside the official syllabus and school teaching programme.</div>
+<p><a href="https://www.edu.gov.zm/wp-content/uploads/2025/04/MATHEMATICS-O-LEVEL-FORMS-1-4.pdf" rel="noopener" target="_blank">Open the official Mathematics I syllabus</a></p>
+</section>
+</main>
+<footer>
+<h3>FORM 1 MATHEMATICS — ZAMBIA CBC LEARNING HUB</h3>
+<p>Learn • Practise • Apply • Review</p>
+<div class="footer-links"><a href="#home">Home</a><a href="#topics">Topics</a><a href="#formula-sheet">Formula Sheet</a><a href="#resource-centre">Pamphlets &amp; Past Papers</a><a href="#quiz">Quiz</a><a href="#cbc-exam">Exam</a></div>
+<p>© 2026 AFFEIN Mathematics Learning Resource</p>
+</footer>
+<button aria-label="Back to top" class="floating" onclick="window.scrollTo({top:0,behavior:'smooth'})" type="button">↑</button>
+<script>
+const topics=[
+'real-numbers','sets','directed-numbers','algebra','coordinate-geometry','relations-functions',
+'approximations','angles-polygons','financial-arithmetic','directions-bearings','similarity-congruence','mensuration'
+];
+
+function getProgress(){
+ try{return JSON.parse(localStorage.getItem('mathProgress')||'{}')}catch(e){return {}}
+}
+function saveProgress(p){localStorage.setItem('mathProgress',JSON.stringify(p))}
+function completeTopic(id){
+ const p=getProgress();p[id]=true;saveProgress(p);updateProgress();
+ const btn=document.querySelector('#'+id+' .btn-blue');
+ if(btn){btn.textContent='✓ Topic Completed';btn.style.background='#15803d'}
+}
+function updateProgress(){
+ const p=getProgress(),done=topics.filter(x=>p[x]).length;
+ document.getElementById('progressText').textContent=done+' of '+topics.length+' topics completed';
+ document.getElementById('progressBar').style.width=(done/topics.length*100)+'%';
+ topics.forEach(id=>{
+   const btn=document.querySelector('#'+id+' .btn-blue');
+   if(btn&&p[id]){btn.textContent='✓ Topic Completed';btn.style.background='#15803d'}
+ });
+}
+function resetProgress(){localStorage.removeItem('mathProgress');location.reload()}
+function toggleDark(){
+ document.body.classList.toggle('dark');
+ localStorage.setItem('darkMode',document.body.classList.contains('dark')?'1':'0');
+}
+if(localStorage.getItem('darkMode')==='1')document.body.classList.add('dark');
+
+document.getElementById('searchBox').addEventListener('input',function(){
+ const q=this.value.toLowerCase().trim();
+ document.querySelectorAll('.topic-card').forEach(card=>{
+   card.classList.toggle('hidden',q && !card.innerText.toLowerCase().includes(q));
+ });
+ document.querySelectorAll('section').forEach(sec=>{
+   if(sec.id==='topics'||sec.id==='welcome'||sec.id==='quiz'||sec.id==='cbc-exam'||sec.id==='answers'||sec.id==='about'||sec.id==='formula-sheet')return;
+   const match=!q||sec.innerText.toLowerCase().includes(q);
+   sec.classList.toggle('hidden',!match);
+ });
+});
+
+function gradeQuiz(){
+ const answers={q1:'6',q2:'2',q3:'154',q4:'090',q5:'9'};
+ let score=0;
+ Object.keys(answers).forEach(q=>{
+  const chosen=document.querySelector('input[name="'+q+'"]:checked');
+  if(chosen&&chosen.value===answers[q])score++;
+ });
+ const result=document.getElementById('quizResult');
+ result.classList.remove('hidden');
+ result.innerHTML='<strong>Your score: '+score+'/5</strong><br>'+(
+ score===5?'Excellent!':score>=3?'Good work. Review the questions you missed.':'Keep practising and revisit the relevant lessons.'
+ );
+}
+
+const navLinks=[...document.querySelectorAll('#mainNav a')];
+const observedSections=[...document.querySelectorAll('main section[id]')];
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id));
+  }
+ });
+},{rootMargin:'-20% 0px -65% 0px'});
+observedSections.forEach(s=>observer.observe(s));
+updateProgress();
+
+
+/* ---------- Advanced learning tools ---------- */
+function changeFont(step){
+  const current=parseFloat(getComputedStyle(document.body).fontSize)||16;
+  const next=Math.max(14,Math.min(20,current+step));
+  document.body.style.fontSize=next+'px';
+  localStorage.setItem('mathFontSize',String(next));
+}
+(function(){
+  const saved=localStorage.getItem('mathFontSize');
+  if(saved) document.body.style.fontSize=saved+'px';
+  const notes=localStorage.getItem('mathStudyNotes');
+  const area=document.getElementById('studyNotes');
+  if(area&&notes) area.value=notes;
+})();
+function saveNotes(){
+  const area=document.getElementById('studyNotes');
+  if(!area)return;
+  localStorage.setItem('mathStudyNotes',area.value);
+  const status=document.getElementById('noteStatus');
+  if(status)status.textContent='Notes saved on this device.';
+}
+function clearNotes(){
+  const area=document.getElementById('studyNotes');
+  if(area)area.value='';
+  localStorage.removeItem('mathStudyNotes');
+  const status=document.getElementById('noteStatus');
+  if(status)status.textContent='Notes cleared.';
+}
+function clearSiteData(){
+  if(!confirm('Reset saved progress, notes, theme and text-size preferences on this device?'))return;
+  localStorage.removeItem('mathProgress');
+  localStorage.removeItem('mathStudyNotes');
+  localStorage.removeItem('darkMode');
+  localStorage.removeItem('mathFontSize');
+  location.reload();
+}
+
+const practiceBank=[
+ {q:'Find the HCF of 18 and 24.',a:'6'},
+ {q:'Simplify: 4x + 3x.',a:'7x'},
+ {q:'Evaluate 3x + 2 when x = 4.',a:'14'},
+ {q:'Find the gradient through (1,2) and (3,6).',a:'2'},
+ {q:'Find the midpoint of (2,4) and (6,8).',a:'(4,6)'},
+ {q:'Find the circumference of a circle with radius 7 cm using π = 22/7.',a:'44 cm'},
+ {q:'A bearing due east is written as three figures. What is it?',a:'090'},
+ {q:'A shape is enlarged by scale factor 3. What is its area scale factor?',a:'9'},
+ {q:'Find the simple interest on K500 at 10% per year for 2 years.',a:'100'},
+ {q:'Find the volume of a cuboid 4 cm × 3 cm × 2 cm.',a:'24 cm³'}
+];
+let currentPractice=null;
+function newPractice(){
+  currentPractice=practiceBank[Math.floor(Math.random()*practiceBank.length)];
+  const q=document.getElementById('practiceQuestion');
+  const input=document.getElementById('practiceAnswer');
+  const fb=document.getElementById('practiceFeedback');
+  if(q)q.textContent=currentPractice.q;
+  if(input)input.value='';
+  if(fb){fb.className='feedback hidden';fb.textContent='';}
+}
+function normaliseAnswer(v){
+  return String(v).trim().toLowerCase().replace(/\s+/g,'').replace(/,/g,'');
+}
+function checkPractice(){
+  const fb=document.getElementById('practiceFeedback');
+  const input=document.getElementById('practiceAnswer');
+  if(!currentPractice||!fb||!input){
+    if(fb){fb.className='feedback bad';fb.textContent='Generate a question first.';}
+    return;
+  }
+  const correct=normaliseAnswer(input.value)===normaliseAnswer(currentPractice.a);
+  fb.className='feedback '+(correct?'good':'bad');
+  fb.textContent=correct?'✓ Correct. Well done!':'✗ Not quite. Check your working and try again.';
+}
+function showPracticeAnswer(){
+  const fb=document.getElementById('practiceFeedback');
+  if(!fb)return;
+  if(!currentPractice){
+    fb.className='feedback bad';fb.textContent='Generate a question first.';return;
+  }
+  fb.className='feedback';fb.textContent='Answer: '+currentPractice.a;
+}
+
+
+function filterResources(type,button){
+ document.querySelectorAll('#resourceGrid .resource-card').forEach(card=>{
+   card.classList.toggle('hidden',type!=='all' && card.dataset.resourceType!==type);
+ });
+ document.querySelectorAll('.resource-filter button').forEach(b=>b.classList.remove('active'));
+ if(button)button.classList.add('active');
+}
+
+function updateDashboard(){
+  const p=getProgress(),done=topics.filter(x=>p[x]).length;
+  const a=document.getElementById('dashTopics'),b=document.getElementById('dashProgress');
+  if(a)a.textContent=done+'/'+topics.length;
+  if(b)b.textContent=Math.round(done/topics.length*100)+'%';
+}
+const originalUpdateProgress=updateProgress;
+updateProgress=function(){
+  originalUpdateProgress();
+  updateDashboard();
+};
+updateDashboard();
+</script>
+</body>
+</html>
